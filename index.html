@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#edf4ff">
+    <title>ezyUKr — Підготовка до НМТ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo" id="nav-logo" aria-label="ezyUKr">
+                <span class="logo-mark">✦</span>
+                <span class="logo-text">
+                    <span class="brand-main">ezy</span>
+                    <span class="brand-accent">UKr</span>
+                </span>
+            </div>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="btn-icon" title="Змінити тему" aria-label="Змінити тему">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4.2"></circle>
+                        <path d="M12 2.5v2.2M12 19.3v2.2M4.5 12H2.3M21.7 12h-2.2M5.8 5.8l-1.55-1.55M19.75 19.75l-1.55-1.55M5.8 18.2l-1.55 1.55M19.75 4.25l-1.55 1.55"></path>
+                    </svg>
+                </button>
+                <button id="favorites-nav" class="btn-icon" title="Обране" aria-label="Обране">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 20s-6.5-4.1-8.4-7.1C2 10.1 2.8 7.4 5.2 6.2c1.8-.9 4-.4 5.4 1.1 1.4-1.5 3.6-2 5.4-1.1 2.4 1.2 3.2 3.9 1.6 6.7C18.5 15.9 12 20 12 20z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="app-container">
+
+        <section id="screen-home" class="screen active">
+            <div class="hero hero-spotlight">
+                <p class="eyebrow">Навчальний центр • українська мова</p>
+                <h1>Підготовка, яка <br>працює як сервіс</h1>
+                <p>Конспекти, теми, прогрес та короткі тести — у одному місці. Тут легко перейти від пояснення до практики й від практики до результату.</p>
+                <div class="hero-actions">
+                    <button id="btn-start" class="btn-primary">Розпочати</button>
+                    <button id="favorites-nav" class="btn-secondary">Обране</button>
+                </div>
+            </div>
+
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">📘</div>
+                    <h3>Конспекти по темах</h3>
+                    <p>Короткі, зрозумілі пояснення з правилами, прикладами та ключовими моментами.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Тести та перевірка</h3>
+                    <p>Переходь від теорії до практики без зайвих кроків і перевіряй свій рівень.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Прогрес у одному місці</h3>
+                    <p>Відстежуй успішність, повертайся до тем і бачиш, де вже впевнений.</p>
+                </article>
+            </div>
+
+            <div class="dashboard-stats">
+                <div class="dashboard-headline">
+                    <div>
+                        <p class="eyebrow eyebrow-small">Твій прогрес</p>
+                        <h3>Працюй у своєму темпі</h3>
+                    </div>
+                    <button id="btn-start-secondary" class="btn-secondary">Відкрити теми</button>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-total-progress">0%</div>
+                        <div class="stat-label">Загальний прогрес</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-tests-passed">0</div>
+                        <div class="stat-label">Пройдено тестів</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-avg-score">0%</div>
+                        <div class="stat-label">Середній бал</div>
+                    </div>
+                </div>
+                <div class="motivation-banner" id="motivation-box">
+                    💡 Обирай тему та починай прокачувати свої знання!
+                </div>
+            </div>
+        </section>
+
+        <section id="screen-topics" class="screen">
+            <div class="screen-header">
+                <h2>Модулі навчання</h2>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Пошук теми чи правила...">
+                </div>
+            </div>
+            
+            <div class="topics-grid" id="topics-container">
+                </div>
+        </section>
+
+        <section id="screen-conspect" class="screen">
+            <div class="back-nav">
+                <button class="btn-secondary btn-back">← До тем</button>
+                <button id="btn-fav-toggle" class="btn-icon" aria-label="Додати в обране">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 20s-6.5-4.1-8.4-7.1C2 10.1 2.8 7.4 5.2 6.2c1.8-.9 4-.4 5.4 1.1 1.4-1.5 3.6-2 5.4-1.1 2.4 1.2 3.2 3.9 1.6 6.7C18.5 15.9 12 20 12 20z"></path>
+                    </svg>
+                </button>
+            </div>
+            <article class="conspect-content" id="conspect-body">
+                </article>
+            <div class="conspect-actions">
+                <button id="btn-start-quiz-from-conspect" class="btn-primary">Перейти до тесту цієї теми</button>
+            </div>
+        </section>
+
+        <section id="screen-quiz" class="screen">
+            <div class="quiz-header">
+                <span id="quiz-topic-title">Тест</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="quiz-progress-bar"></div>
+                </div>
+                <span id="quiz-question-counter">1/10</span>
+            </div>
+
+            <div class="quiz-container">
+                <div id="question-text" class="question-text">Завантаження питання...</div>
+                <div id="answers-container" class="answers-container">
+                    </div>
+            </div>
+
+            <div class="quiz-footer">
+                <button id="btn-submit-answer" class="btn-primary" disabled>Підтвердити відповідь</button>
+            </div>
+        </section>
+
+        <section id="screen-results" class="screen">
+            <div class="results-card">
+                <div class="result-badge" id="result-grade-badge">Відмінно</div>
+                <h2 id="result-score-percent">100%</h2>
+                <p id="result-score-text">Правильних відповідей: 10 з 10</p>
+                <p class="motivation-text" id="result-motivation"></p>
+                
+                <div class="error-review" id="error-review-container">
+                    <h3>Аналіз помилок</h3>
+                    <div id="error-list"></div>
+                </div>
+
+                <div class="results-actions">
+                    <button id="btn-restart-quiz" class="btn-primary">Пройти ще раз</button>
+                    <button class="btn-secondary btn-back">До списку тем</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+    <div id="modal-favorites" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>⭐ Обрані теми</h3>
+            <ul id="favorites-list" class="favorites-list">
+                </ul>
+        </div>
+    </div>
+
+</body>
+</html>
