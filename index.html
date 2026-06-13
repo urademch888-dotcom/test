@@ -3,35 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#edf4ff">
+    <meta name="theme-color" content="#f5f5f7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <title>ezyUKr — Підготовка до НМТ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo" id="nav-logo" aria-label="ezyUKr">
-                <span class="logo-mark">✦</span>
-                <span class="logo-text">
-                    <span class="brand-main">ezy</span>
-                    <span class="brand-accent">UKr</span>
-                </span>
-            </div>
+            <button class="logo" id="nav-logo" aria-label="ezyUKr">
+                <span class="logo-icon"></span>
+                <span class="logo-text">ezyUKr</span>
+            </button>
             <div class="nav-actions">
-                <button id="theme-toggle" class="btn-icon" title="Змінити тему" aria-label="Змінити тему">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <circle cx="12" cy="12" r="4.2"></circle>
-                        <path d="M12 2.5v2.2M12 19.3v2.2M4.5 12H2.3M21.7 12h-2.2M5.8 5.8l-1.55-1.55M19.75 19.75l-1.55-1.55M5.8 18.2l-1.55 1.55M19.75 4.25l-1.55 1.55"></path>
-                    </svg>
+                <button id="streak-btn" class="btn-pill" title="Серія днів">
+                    <span class="streak-flame"></span>
+                    <span id="streak-count">0</span>
+                </button>
+                <button id="theme-toggle" class="btn-icon" title="Тема" aria-label="Змінити тему">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.5 12H2.3M21.7 12h-2.2M5.8 5.8L4.25 4.25M19.75 19.75l-1.55-1.55M5.8 18.2L4.25 19.75M19.75 4.25L18.2 5.8"/></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                 </button>
                 <button id="favorites-nav" class="btn-icon" title="Обране" aria-label="Обране">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M12 20s-6.5-4.1-8.4-7.1C2 10.1 2.8 7.4 5.2 6.2c1.8-.9 4-.4 5.4 1.1 1.4-1.5 3.6-2 5.4-1.1 2.4 1.2 3.2 3.9 1.6 6.7C18.5 15.9 12 20 12 20z"></path>
-                    </svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-6.5-4.1-8.4-7.1C2 10.1 2.8 7.4 5.2 6.2c1.8-.9 4-.4 5.4 1.1 1.4-1.5 3.6-2 5.4-1.1 2.4 1.2 3.2 3.9 1.6 6.7C18.5 15.9 12 20 12 20z"/></svg>
                 </button>
             </div>
         </div>
@@ -39,142 +38,207 @@
 
     <main class="app-container">
 
+        <!-- HOME -->
         <section id="screen-home" class="screen active">
-            <div class="hero hero-spotlight">
-                <p class="eyebrow">Навчальний центр • українська мова</p>
-                <h1>Підготовка, яка <br>працює як сервіс</h1>
-                <p>Конспекти, теми, прогрес та короткі тести — у одному місці. Тут легко перейти від пояснення до практики й від практики до результату.</p>
+            <div class="hero">
+                <div class="hero-badge">Навчальний центр</div>
+                <h1 class="hero-title">Підготовка до НМТ<br><span class="gradient-text">як у Apple</span></h1>
+                <p class="hero-subtitle">Конспекти, тести, прогрес та серії днів — все в одному місці з красивим інтерфейсом.</p>
                 <div class="hero-actions">
-                    <button id="btn-start" class="btn-primary">Розпочати</button>
-                    <button id="btn-favorites-home" class="btn-secondary">Обране</button>
+                    <button id="btn-start" class="btn-primary btn-lg">Розпочати</button>
+                    <button id="btn-favorites-home" class="btn-secondary btn-lg">Обране</button>
                 </div>
             </div>
 
-            <div class="feature-grid">
-                <article class="feature-card">
-                    <div class="feature-icon">📘</div>
-                    <h3>Конспекти по темах</h3>
-                    <p>Короткі, зрозумілі пояснення з правилами, прикладами та ключовими моментами.</p>
-                </article>
-                <article class="feature-card">
-                    <div class="feature-icon">🧠</div>
-                    <h3>Тести та перевірка</h3>
-                    <p>Переходь від теорії до практики без зайвих кроків і перевіряй свій рівень.</p>
-                </article>
-                <article class="feature-card">
-                    <div class="feature-icon">📈</div>
-                    <h3>Прогрес у одному місці</h3>
-                    <p>Відстежуй успішність, повертайся до тем і бачиш, де вже впевнений.</p>
-                </article>
+            <div class="stats-row">
+                <div class="stat-card-large">
+                    <div class="stat-ring" id="ring-progress">
+                        <svg viewBox="0 0 36 36">
+                            <path class="ring-bg" d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="2.5"/>
+                            <path class="ring-fill" d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="2.5" stroke-dasharray="0, 100"/>
+                        </svg>
+                        <span class="ring-value" id="ring-value">0%</span>
+                    </div>
+                    <div class="stat-card-text">
+                        <span class="stat-card-label">Загальний прогрес</span>
+                        <span class="stat-card-sublabel">Теми вивчено</span>
+                    </div>
+                </div>
+                <div class="stat-card-large">
+                    <div class="stat-ring stat-ring-blue">
+                        <svg viewBox="0 0 36 36">
+                            <path class="ring-bg" d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="2.5"/>
+                            <path class="ring-fill" d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="2.5" stroke-dasharray="0, 100"/>
+                        </svg>
+                        <span class="ring-value" id="ring-avg">0%</span>
+                    </div>
+                    <div class="stat-card-text">
+                        <span class="stat-card-label">Середній бал</span>
+                        <span class="stat-card-sublabel">Усі тести</span>
+                    </div>
+                </div>
+                <div class="stat-card-large">
+                    <div class="stat-ring stat-ring-orange">
+                        <svg viewBox="0 0 36 36">
+                            <path class="ring-bg" d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="2.5"/>
+                            <path class="ring-fill" d="M18 2.0845a 15.9155 15.9155 0 0 1 0 31.831a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="2.5" stroke-dasharray="0, 100"/>
+                        </svg>
+                        <span class="ring-value" id="ring-tests">0</span>
+                    </div>
+                    <div class="stat-card-text">
+                        <span class="stat-card-label">Пройдено тестів</span>
+                        <span class="stat-card-sublabel">Загалом</span>
+                    </div>
+                </div>
             </div>
 
-            <div class="dashboard-stats">
-                <div class="dashboard-headline">
-                    <div>
-                        <p class="eyebrow eyebrow-small">Твій прогрес</p>
-                        <h3>Працюй у своєму темпі</h3>
-                    </div>
-                    <button id="btn-start-secondary" class="btn-secondary">Відкрити теми</button>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-value" id="stat-total-progress">0%</div>
-                        <div class="stat-label">Загальний прогрес</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value" id="stat-tests-passed">0</div>
-                        <div class="stat-label">Пройдено тестів</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value" id="stat-avg-score">0%</div>
-                        <div class="stat-label">Середній бал</div>
-                    </div>
-                </div>
-                <div class="motivation-banner" id="motivation-box">
-                    💡 Обирай тему та починай прокачувати свої знання!
-                </div>
-            </div>
-        </section>
-
-        <section id="screen-topics" class="screen">
-            <div class="screen-header">
-                <h2>Модулі навчання</h2>
-                <div class="search-box">
-                    <input type="text" id="search-input" placeholder="Пошук теми чи правила...">
-                </div>
-            </div>
-            
-            <div class="topics-grid" id="topics-container">
-                </div>
-        </section>
-
-        <section id="screen-conspect" class="screen">
-            <div class="back-nav">
-                <button class="btn-secondary btn-back">← До тем</button>
-                <button id="btn-fav-toggle" class="btn-icon" aria-label="Додати в обране">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M12 20s-6.5-4.1-8.4-7.1C2 10.1 2.8 7.4 5.2 6.2c1.8-.9 4-.4 5.4 1.1 1.4-1.5 3.6-2 5.4-1.1 2.4 1.2 3.2 3.9 1.6 6.7C18.5 15.9 12 20 12 20z"></path>
-                    </svg>
+            <div class="quick-actions">
+                <button class="quick-card" id="btn-start-quick">
+                    <div class="quick-icon qi-1"></div>
+                    <span class="quick-label">Теми</span>
+                </button>
+                <button class="quick-card" id="btn-random-quiz">
+                    <div class="quick-icon qi-2"></div>
+                    <span class="quick-label">Випадковий тест</span>
+                </button>
+                <button class="quick-card" id="btn-favorites-quick">
+                    <div class="quick-icon qi-3"></div>
+                    <span class="quick-label">Обране</span>
                 </button>
             </div>
-            <article class="conspect-content" id="conspect-body">
-                </article>
-            <div class="conspect-actions">
-                <button id="btn-start-quiz-from-conspect" class="btn-primary">Перейти до тесту цієї теми</button>
-            </div>
-        </section>
 
-        <section id="screen-quiz" class="screen">
-            <div class="quiz-header">
-                <span id="quiz-topic-title">Тест</span>
-                <div class="progress-bar-container">
-                    <div class="progress-bar-fill" id="quiz-progress-bar"></div>
+            <div class="section-block">
+                <div class="section-header">
+                    <h2>Модулі</h2>
+                    <button class="btn-text" id="btn-all-topics">Усі теми</button>
                 </div>
-                <span id="quiz-question-counter">1/10</span>
+                <div class="topics-scroll" id="home-topics-scroll"></div>
             </div>
 
-            <div class="quiz-container">
-                <div id="question-text" class="question-text">Завантаження питання...</div>
-                <div id="answers-container" class="answers-container">
-                    </div>
-            </div>
-
-            <div class="quiz-footer">
-                <button id="btn-submit-answer" class="btn-primary" disabled>Підтвердити відповідь</button>
+            <div class="motivation-card" id="motivation-box">
+                <div class="motivation-icon"></div>
+                <div class="motivation-text">Обирай тему та починай прокачувати знання!</div>
             </div>
         </section>
 
+        <!-- TOPICS -->
+        <section id="screen-topics" class="screen">
+            <div class="screen-header">
+                <div class="screen-title-row">
+                    <button class="btn-back-arrow" id="btn-back-home">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <h2>Модулі навчання</h2>
+                </div>
+                <div class="search-bar">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                    <input type="text" id="search-input" placeholder="Пошук теми...">
+                    <button class="search-clear" id="search-clear">&times;</button>
+                </div>
+            </div>
+            <div class="topics-grid" id="topics-container"></div>
+        </section>
+
+        <!-- CONSPECT -->
+        <section id="screen-conspect" class="screen">
+            <div class="conspect-nav">
+                <button class="btn-back-arrow" id="btn-back-topics-from-conspect">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <button id="btn-fav-toggle" class="btn-icon fav-btn" aria-label="Додати в обране">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-6.5-4.1-8.4-7.1C2 10.1 2.8 7.4 5.2 6.2c1.8-.9 4-.4 5.4 1.1 1.4-1.5 3.6-2 5.4-1.1 2.4 1.2 3.2 3.9 1.6 6.7C18.5 15.9 12 20 12 20z"/></svg>
+                </button>
+            </div>
+            <article class="conspect-body" id="conspect-body"></article>
+            <div class="conspect-footer">
+                <button id="btn-start-quiz-from-conspect" class="btn-primary btn-full">Перейти до тесту</button>
+            </div>
+        </section>
+
+        <!-- QUIZ -->
+        <section id="screen-quiz" class="screen">
+            <div class="quiz-top-bar">
+                <button class="btn-back-arrow" id="btn-quit-quiz">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <div class="quiz-progress-wrap">
+                    <div class="quiz-progress-track">
+                        <div class="quiz-progress-fill" id="quiz-progress-bar"></div>
+                    </div>
+                </div>
+                <div class="quiz-timer" id="quiz-timer">0:00</div>
+            </div>
+            <div class="quiz-body">
+                <div class="quiz-question-counter" id="quiz-question-counter">1 / 10</div>
+                <div class="quiz-question" id="question-text">Завантаження...</div>
+                <div class="quiz-answers" id="answers-container"></div>
+            </div>
+            <div class="quiz-footer">
+                <button id="btn-submit-answer" class="btn-primary btn-full" disabled>Далі</button>
+            </div>
+        </section>
+
+        <!-- RESULTS -->
         <section id="screen-results" class="screen">
-            <div class="results-card">
-                <div class="result-badge" id="result-grade-badge">Відмінно</div>
-                <h2 id="result-score-percent">100%</h2>
-                <p id="result-score-text">Правильних відповідей: 10 з 10</p>
-                <p class="motivation-text" id="result-motivation"></p>
-                
+            <div class="results-wrap">
+                <div class="results-celebration" id="results-celebration"></div>
+                <div class="results-score-ring">
+                    <svg viewBox="0 0 120 120">
+                        <circle class="score-ring-bg" cx="60" cy="60" r="52" fill="none" stroke-width="8"/>
+                        <circle class="score-ring-fill" id="score-ring-fill" cx="60" cy="60" r="52" fill="none" stroke-width="8" stroke-dasharray="0 327" stroke-linecap="round" transform="rotate(-90 60 60)"/>
+                    </svg>
+                    <span class="score-ring-text" id="result-score-percent">0%</span>
+                </div>
+                <div class="results-badge" id="result-grade-badge">Відмінно</div>
+                <p class="results-detail" id="result-score-text">0 з 10 правильних</p>
+                <p class="results-motivation" id="result-motivation"></p>
+
+                <div class="results-stats-row">
+                    <div class="rs-item">
+                        <span class="rs-value" id="rs-time">0:00</span>
+                        <span class="rs-label">Час</span>
+                    </div>
+                    <div class="rs-item">
+                        <span class="rs-value" id="rs-accuracy">0%</span>
+                        <span class="rs-label">Точність</span>
+                    </div>
+                    <div class="rs-item">
+                        <span class="rs-value" id="rs-xp">+0</span>
+                        <span class="rs-label">XP</span>
+                    </div>
+                </div>
+
                 <div class="error-review" id="error-review-container">
                     <h3>Аналіз помилок</h3>
                     <div id="error-list"></div>
                 </div>
 
                 <div class="results-actions">
-                    <button id="btn-restart-quiz" class="btn-primary">Пройти ще раз</button>
-                    <button class="btn-secondary btn-back">До списку тем</button>
+                    <button id="btn-restart-quiz" class="btn-primary btn-lg btn-full">Пройти ще раз</button>
+                    <button id="btn-back-results" class="btn-secondary btn-lg btn-full">До списку тем</button>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <script src="script.js"></script>
-
-    <div id="modal-favorites" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h3>⭐ Обрані теми</h3>
-            <ul id="favorites-list" class="favorites-list">
-                </ul>
+    <div id="modal-favorites" class="modal-overlay">
+        <div class="modal-sheet">
+            <div class="modal-handle"></div>
+            <div class="modal-header">
+                <h3>Обрані теми</h3>
+                <button class="btn-icon close-modal" aria-label="Закрити">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul id="favorites-list" class="favorites-list"></ul>
+            </div>
         </div>
     </div>
 
+    <div id="confetti-container" class="confetti-container"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
