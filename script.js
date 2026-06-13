@@ -276,12 +276,29 @@ const database = [
 ];
 
 // ================= СТАН ЗАСТОСУНКУ (STATE) =================
-let userProgress = {
-    favorites: [],
-    completedTests: {}, // id_теми: найкращий відсоток
-    totalTestsCount: 0,
-    scoresSum: 0
-};
+function createDefaultProgressState() {
+    return {
+        favorites: [],
+        completedTests: {},
+        totalTestsCount: 0,
+        scoresSum: 0
+    };
+}
+
+function normalizeProgressState(savedState = {}) {
+    const defaults = createDefaultProgressState();
+
+    return {
+        favorites: Array.isArray(savedState.favorites) ? savedState.favorites.slice() : defaults.favorites.slice(),
+        completedTests: savedState.completedTests && typeof savedState.completedTests === 'object'
+            ? { ...savedState.completedTests }
+            : { ...defaults.completedTests },
+        totalTestsCount: Number.isFinite(savedState.totalTestsCount) ? savedState.totalTestsCount : defaults.totalTestsCount,
+        scoresSum: Number.isFinite(savedState.scoresSum) ? savedState.scoresSum : defaults.scoresSum
+    };
+}
+
+let userProgress = createDefaultProgressState();
 
 let currentQuiz = {
     topicId: null,
@@ -292,13 +309,15 @@ let currentQuiz = {
 };
 
 // ================= ІНІЦІАЛІЗАЦІЯ ТА НАВІГАЦІЯ =================
-document.addEventListener("DOMContentLoaded", () => {
-    loadProgress();
-    initTheme();
-    renderStats();
-    renderTopics();
-    setupEventListeners();
-});
+if (typeof document !== "undefined") {
+    document.addEventListener("DOMContentLoaded", () => {
+        loadProgress();
+        initTheme();
+        renderStats();
+        renderTopics();
+        setupEventListeners();
+    });
+}
 
 function setupEventListeners() {
     // Навігація
@@ -315,6 +334,7 @@ function setupEventListeners() {
 
     // Обране
     document.getElementById("favorites-nav").addEventListener("click", toggleFavoritesModal);
+    document.getElementById("btn-favorites-home").addEventListener("click", toggleFavoritesModal);
     document.querySelector(".close-modal").addEventListener("click", toggleFavoritesModal);
     document.getElementById("btn-fav-toggle").addEventListener("click", handleToggleFavoritePage);
 
@@ -622,9 +642,18 @@ function saveTestProgress(topicId, score) {
 }
 
 function loadProgress() {
-    const data = localStorage.getItem("ezyukr_progress");
-    if (data) {
-        userProgress = JSON.parse(data);
+    const data = typeof localStorage !== "undefined" ? localStorage.getItem("ezyukr_progress") : null;
+
+    if (!data) {
+        userProgress = createDefaultProgressState();
+        return;
+    }
+
+    try {
+        userProgress = normalizeProgressState(JSON.parse(data));
+    } catch (error) {
+        console.warn("Не вдалося прочитати прогрес з localStorage", error);
+        userProgress = createDefaultProgressState();
     }
 }
 
@@ -720,4 +749,11 @@ function shuffleArray(array) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
+}
+
+if (typeof module !== "undefined") {
+    module.exports = {
+        createDefaultProgressState,
+        normalizeProgressState
+    };
 }
