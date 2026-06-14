@@ -84,7 +84,12 @@ const database = [
             { type: "single", text: "Яке слово написано правильно?", options: ["передбачити", "перед-бачити", "пердбачити", "передбачити́"], answer: 0 },
             { type: "single", text: "Підкресліть слово з подвійною Н:", options: ["сонячний", "кам'яний", "світлий", "золотий"], answer: 0 },
             { type: "multiple", text: "Які слова пишуться разом (без дефіса)?", options: ["південно-західний", "мікроелектроніка", "україно-англійський", "пісенно-танцювальний"], answer: [1, 3] },
-            { type: "single", text: "Як правильно: «стомлений учень» чи «стомлений учень»?", options: ["стомлений", "стомлений", "обидва варіанти правильні", "жоден"], answer: 2 }
+            { type: "single", text: "Як правильно: «стомлений учень» чи «стомлений учень»?", options: ["стомлений", "стомлений", "обидва варіанти правильні", "жоден"], answer: 2 },
+            { type: "single", text: "Букву и треба писати на місці пропуску в усіх словах рядка:", options: ["тривожний, абрикос, митушливий", "меридіан, теоретичний, дрижати", "смиренний, християнин, мителик", "химерний, завмирання, диригент"], answer: 3 },
+            { type: "single", text: "НЕМАЄ орфографічних помилок у варіанті:", options: ["Росташований у Чорному Морі острів Зміїний належить Україні та має стратегічне значення.", "Житлові споруди на ньому утворюють селеще Біле Ізмаїльського району Одесської області.", "Назва острова пов'язана з тим, що тут водилося багато змій, яких у море виносило течією з гирла Дунаю.", "За давньо-грецькою лигендою, острів підняла з моря богиня Фетіда для свого сина Ахілла."], answer: 2 },
+            { type: "single", text: "З подвоєним НН у тексті треба писати слово:", options: ["розбавленні", "бетонні", "обплетенні", "запаленні"], answer: 0 },
+            { type: "single", text: "Правильно написано всі слова іншомовного походження в рядку:", options: ["Голландія, тона, метал", "Россіні, ванна, комісія", "колектив, нето, Яффа", "Руссо, філіпінка, сума", "Міссурі, інтелект, шассі"], answer: 0 },
+            { type: "single", text: "Подвоєні літери треба писати на місці пропусків у всіх словах рядка:", options: ["мас..а, Гол..андія, барок..о", "Тал..ін.., ван..а, телеграм..а", "Ас..ирія, брут..о, бравіс..имо", "ір..еальний, Ахіл..ес, тон..а", "Жан..а, марок..анець, клас.."], answer: 2 }
         ]
     },
     {
@@ -118,7 +123,8 @@ const database = [
             { type: "single", text: "Що таке омоніми?", options: ["Слова однакового звучання з різним значенням", "Слова близькі за значенням", "Слова з протилежним значенням", "Слова з подібним звучанням"], answer: 0 },
             { type: "single", text: "Яка пара є паронімами?", options: ["день — ніч", "довідка — відомість", "мудрий — розумний", "ключ — замок"], answer: 1 },
             { type: "multiple", text: "Які слова є синонімами?", options: ["гарний — прекрасний", "щедрий — скупий", "вчитель — педагог", "день — ранок"], answer: [0, 2] },
-            { type: "single", text: "«Економний» — це означає:", options: ["пов'язаний з економікою", "бережливий", "дорогий", "швидкий"], answer: 1 }
+            { type: "single", text: "«Економний» — це означає:", options: ["пов'язаний з економікою", "бережливий", "дорогий", "швидкий"], answer: 1 },
+            { type: "single", text: "Лексична помилка є в реченні:", options: ["Гурт «Антитіла» запропонував глядачам нове відео на пісню «Фари» зі свого альбому «Сонце».", "Команда вирішила поєднати голлівудські блокбастери про супергероїв з українською дійсністю.", "Музиканти порушили важливу для оточуючого середовища тему – затори та ями на українських дорогах.", "За сюжетом, супергерой щоночі рятує місто, а, за законами жанру, йому протистоїть «блискучий» лиходій Джокер.", "Над втіленням ідеї цього відеокліпу команда творчо працювала три доби на чотирьох знімальних майданчиках Києва."], answer: 2 }
         ]
     },
     {
@@ -148,7 +154,9 @@ const database = [
             { type: "single", text: "Що означає «пасти задніх»?", options: ["керувати", "відставати", "допомагати", "перемагати"], answer: 1 },
             { type: "single", text: "Яке джерело походження фразеологізму «пекти раків»?", options: ["релігія", "мучитися", "праця", "полювання"], answer: 1 },
             { type: "single", text: "Що означає «зарубати на носі»?", options: ["забути", "запам'ятати назавжди", "написати", "поранитися"], answer: 1 },
-            { type: "single", text: "«Накивати п'ятами» — це:", options: ["співати", "тікати", "працювати", "відпочивати"], answer: 1 }
+            { type: "single", text: "«Накивати п'ятами» — це:", options: ["співати", "тікати", "працювати", "відпочивати"], answer: 1 },
+            { type: "matching", text: "Установіть відповідність між фразеологізмом і його значенням:", left: ["ніколи", "рано", "байдуже", "нічого"], right: ["ні світ ні зоря", "ні кілка ні дрючка", "ні вдень ні вночі", "ні гаряче ні зимно"], answer: { 0: 2, 1: 0, 2: 3, 3: 1 } },
+            { type: "single", text: "Позначте рядок, у якому фразеологічний зворот має значення «надумане мірило упередженої людини, яка підганяє під нього факти дійсності»:", options: ["піррова перемога", "прокрустове ложе", "геростратова слава", "дамоклів меч", "Еолова арфа"], answer: 1 }
         ]
     },
     {
@@ -178,7 +186,23 @@ const database = [
             { type: "single", text: "Яка граматична категорія НЕ належить до дієслова?", options: ["час", "рід", "вид", "особа"], answer: 1 },
             { type: "single", text: "Слово «читати» — це частина мови:", options: ["іменник", "прикметник", "дієслово", "числівник"], answer: 2 },
             { type: "multiple", text: "Які частини мови є самостійними?", options: ["прийменник", "іменник", "сполучник", "прикметник"], answer: [1, 3] },
-            { type: "single", text: "Іменник має такі граматичні категорії:", options: ["час, вид, спосіб", "рід, число, відмінок", "особа, число, час", "наголос, тон, ритм"], answer: 1 }
+            { type: "single", text: "Іменник має такі граматичні категорії:", options: ["час, вид, спосіб", "рід, число, відмінок", "особа, число, час", "наголос, тон, ритм"], answer: 1 },
+            { type: "single", text: "Суфікс -ЕВ- має прикметник, утворений від слова:", options: ["край", "груша", "кущ", "кварц", "вечір"], answer: 4 },
+            { type: "single", text: "Суфікс -ОВ- має прикметник, утворений від іменника:", options: ["плащ", "читач", "ситець", "насіння"], answer: 0 },
+            { type: "single", text: "Помилково утворено форму ступеня порівняння прикметника в реченні:", options: ["Люди прагнуть пізнати далекі світи, але той, що до нас ближчий від усіх, вивчили зовсім мало.", "Нині вивчено лише п'ять відсотків дна Світового океану, тому якнайцікавіші відкриття в дослідників ще попереду.", "Після відкриття 1875 року Маріанської западини, найбільш глибокого місця на планеті, там побувало лише три людини.", "На батискафі «Трієст» 1960 року Жак Пікар і Дон Волш сягнули найрекорднішої глибини – 10 916 метрів.", "Через 52 роки в Маріанську западину зануривсь один з найвідоміших режисерів – Джеймс Кемерон."], answer: 3 },
+            { type: "single", text: "Укажіть правильний варіант послідовного заповнення пропусків: «Під час тренінгу ми навчимо вас __________ впливу на потенційного працедавця і розкриємо секрети того, як створити __________ резюме.»", options: ["дієвим прийомам, якісну", "дієвих прийомів, якісний", "дієвим прийомам, якісний", "дієвих прийомів, якісну", "дієвих прийомів, якісне"], answer: 2 },
+            { type: "single", text: "НЕПРАВИЛЬНО вжито форму займенника в реченні:", options: ["Зустріти друзів їм сьогодні таки вдалося.", "Завдяки їм роботу завершили майже вчасно.", "Наше завдання – створити їм добрі умови.", "Батьки неабияк пишалися їми за цю перемогу.", "На перерві їм повідомили про вихідний день."], answer: 3 },
+            { type: "single", text: "Правильною є форма займенника в словосполученні:", options: ["на тім березі ріки", "з твоєго району", "звернутися до їх", "всим підприємцям", "наший проєкт"], answer: 0 },
+            { type: "single", text: "Неправильно утворено форму слова у варіанті:", options: ["пане Костянтине", "для всіх дослідників", "восьмидесяти років", "візьмімо участь"], answer: 2 },
+            { type: "single", text: "Правильно написано всі займенники в рядку:", options: ["дехто, ніякий, скільки-небудь, абищо", "ніщо, будь-який, де-котрий, ніскільки", "будь-що, якийсь, аби-хто, що-небудь", "нічий, хто-небудь, де-який, будь-чий", "будь-хто, якийсь, ніякий, хто-зна-що"], answer: 0 },
+            { type: "single", text: "Правильно утворено форму третьої особи множини від дієслова:", options: ["мріяти – мріять", "молоти – мелють", "солити – солють", "бігти – біжуть", "ловити – лювлють"], answer: 3 },
+            { type: "single", text: "Правильно утворено форму наказового способу дієслів у рядку:", options: ["ходімте", "дозволимо", "не мовчімо", "пішли", "подякуємо"], answer: 0 },
+            { type: "single", text: "Форму наказового способу дієслова вжито в реченні:", options: ["Пропонуємо простий рецепт картоплі по-селянськи: потрібні продукти завжди є в кожній оселі.", "Спробуйте приготувати цю апетитну страву вдома й насолоджуйтеся її смаком разом з рідними!", "Картоплю треба почистити, промити й добре просушити, потім нарізати на поздовжні шматки.", "Додаємо олію, сіль, перець, збір сушених італійських трав, усе добре перемішуємо, викладаємо на застелений папером лист.", "Випікати потрібно в духовій шафі хвилин 30–40 за температури 180–200 °С до золотистого кольору."], answer: 1 },
+            { type: "single", text: "Визначте правильний варіант послідовного заповнення пропусків: «Усім охочим ________ завітати до Національного ________ історії України, щоб побачити роботи одного з ________ ювелірних майстрів помежів'я ХVII–ХVIII століть Івана ________.»", options: ["раджу, музея, найталановитих, Равича", "ражу, музея, найталановитіших, Равич", "радю, музею, самих талановитих, Равича", "ражу, музею, найбільш талановитих, Равич", "раджу, музею, найталановитіших, Равича"], answer: 4 },
+            { type: "single", text: "Друзі, __________ до Гордія Юрійовича, щоб подякувати __________ за корисні поради.", options: ["пійдімо, його", "пішлімо, йому", "ходімте, його", "ходімо, йому", "пішліть, його"], answer: 3 },
+            { type: "single", text: "Правильно утворено дієприкметник:", options: ["висохнути – висохший", "упіймати – упіймавший", "умитися – умившийся", "одягнути – одягнений", "посадити – посадений"], answer: 2 },
+            { type: "single", text: "Правильно утворені всі форми дієприкметників у рядку:", options: ["накреслений, зшитий, роблячий, побачений", "лежачий, посивілий, зліплений, нафарбований", "зацікавлений, помолодівший, уславлений, змарнілий", "розвалений, посміхаючийся, палаючий, знайдений", "оформлений, випечений, потемніший, забутий"], answer: 2 },
+            { type: "single", text: "Редагування НЕ ПОТРЕБУЄ словосполучення:", options: ["стомившийся за день", "початкуючі поети", "дозрівші яблука", "цілюща рослина"], answer: 3 }
         ]
     },
     {
@@ -211,7 +235,13 @@ const database = [
             { type: "single", text: "Словосполучення — це:", options: ["одне слово", "два і більше пов'язаних слів", "речення з двох частин", "абзац тексту"], answer: 1 },
             { type: "single", text: "Яке речення є складним?", options: ["Вітер дме.", "Вітер дме, і листя кружляє.", "Діти граються.", "Сонце світить яскраво."], answer: 1 },
             { type: "single", text: "Додаток у реченні — це:", options: ["головний член", "другорядний член", "член речення, що означає ознаку", "частина мови"], answer: 1 },
-            { type: "single", text: "Обставина відповідає на питання:", options: ["хто? що?", "який?", "де? коли? як?", "кому? чому?"], answer: 2 }
+            { type: "single", text: "Обставина відповідає на питання:", options: ["хто? що?", "який?", "де? коли? як?", "кому? чому?"], answer: 2 },
+            { type: "single", text: "Відокремленим означенням НЕ МОЖНА замінити підрядну частину в реченні:", options: ["Листя під кленом було схоже на гору печива, яке щедро посипали цукровою пудрою.", "Дітлахи з підстрибом побігли в кінець греблі, яку було обсаджено густими вербами.", "Гості захоплено роздивлялися стіл, який застелили майстерно вишитою скатертиною.", "Щука – річковий хижак, який полює на дрібну рибу в безмежних водних просторах."], answer: 3 },
+            { type: "single", text: "Відокремлене означення вжито в реченні (розділові знаки пропущено):", options: ["Довгі вечірні тіні перекреслюють порослу споришем вулицю.", "Налякане голосами людей продиралося через хащі стадо зубрів.", "Дивиться хлопець на зіткані зі срібла вишняки й мало не зітхає.", "Люблю ходити по вкритій кришталевою росою ранковій траві."], answer: 3 },
+            { type: "single", text: "Речення з однорідними членами можна утворити, якщо до частини «Я обожнюю теплі травневі вечори…» додати:", options: ["але недолюблюю холодні листопадові.", "зі щебетанням птахів у нашому саду.", "тоді так мріється про щось небуденне.", "напоєні пахощами яблуневого цвіту.", "хоча й червневі мають свої принади."], answer: 0 },
+            { type: "matching", text: "До кожного типу складного речення (1–4) доберіть приклад (А–Д):", left: ["складносурядне", "складнопідрядне", "безсполучникове", "з різними видами зв'язку"], right: ["Є фізична активність, яка надзвичайно корисна для здоров'я, – заняття танцями.", "Як стверджують науковці, помірна танцювальна активність зменшує ризики появи серцево-судинних захворювань іноді навіть ефективніше, ніж звичайні прогулянки.", "Оскільки це один із найприємніших способів бути активним, не зважайте на манеру виконання ритмічних рухів: швидкий чи повільний, у парі чи сольний – будь-який танець корисний.", "Танцюючи регулярно, ви можете підтримувати оптимальну вагу, підвищувати витривалість організму, зміцнювати кістки та м'язи; водночас така активність має велике значення для психічного здоров'я."], answer: { 0: 0, 1: 2, 2: 3, 3: 1 } },
+            { type: "matching", text: "Прочитайте речення (1–4) і з'ясуйте його тип (А–Д):", left: ["просте ускладнене", "складносурядне", "складнопідрядне", "складне з різними видами зв'язку"], right: ["Найцікавіше й найзагадковіше – зв'язок двох складних психічних явищ – мови та мислення.", "Науковці й досі сперечаються, що з-поміж них є первинним.", "Уважають, що від народження дитини мислення працює на формування мови, а приблизно з трьох років мова стає потужним двигуном розвитку мислення.", "Трирічний малюк не вміє скласти пірамідки чи пазла хоча б із трьох частин – це тривожний знак можливих проблем із мовленням у майбутньому."], answer: { 0: 0, 1: 2, 2: 3, 3: 1 } },
+            { type: "single", text: "Відокремленим додатком ускладнено речення:", options: ["Напевно, це був інший світ – чудовий невідомий храм.", "Щасливий і веселий, я дивився на високе бездонне небо.", "Тихі конвалії, білі і ніжні, скоро розплющать срібні повіки.", "Там, замість житечка, у теплеє літечко враз терен зацвів.", "Вітру на морі не було, проте клекотав сильний прибій."], answer: 3 }
         ]
     },
     {
@@ -245,7 +275,8 @@ const database = [
             { type: "single", text: "Тире ставиться між підметом і присудком, якщо обидва виражені:", options: ["дієсловами", "прикметниками", "іменниками в називному відмінку", "прислівниками"], answer: 2 },
             { type: "single", text: "Двокрапка вживається перед:", options: ["запереченням", "поясненням або переліком", "звертанням", "вигуком"], answer: 1 },
             { type: "single", text: "Кому при однорідних членах речення ставимо між:", options: ["останнім і передостаннім", "усіма членами крім з'єднаних сполучником", "першим і другим", "не ставимо"], answer: 1 },
-            { type: "single", text: "Який знак розділу ставиться при звертанні?", options: ["крапка", "крапка з комою", "кома", "тире"], answer: 2 }
+            { type: "single", text: "Який знак розділу ставиться при звертанні?", options: ["крапка", "крапка з комою", "кома", "тире"], answer: 2 },
+            { type: "single", text: "НЕПРАВИЛЬНО обґрунтовано вживання розділових знаків у рядку (Архітектура Києва):", options: ["тире 1 – між підметом і присудком", "коми 2, 5 – між частинами складного речення, що поєднані підрядним зв'язком", "коми 3, 4 – при вставному слові", "кома 6 – при відокремленому означенні", "кома 7 – між частинами складного речення, що поєднані сурядним зв'язком"], answer: 1 }
         ]
     },
     {
@@ -288,7 +319,17 @@ const THEME_KEY = "ezyukr_theme";
 const STREAK_KEY = "ezyukr_streak";
 
 function defaultState() {
-    return { favorites: [], completedTests: {}, totalTestsCount: 0, scoresSum: 0, xp: 0 };
+    return {
+        favorites: [],
+        completedTests: {},
+        totalTestsCount: 0,
+        scoresSum: 0,
+        xp: 0,
+        dailyChallenge: { date: null, completed: false },
+        dailyGoals: { date: null, testsCompleted: 0, questionsAnswered: 0, correctAnswers: 0, goalsClaimed: [] },
+        activity: [],
+        achievements: []
+    };
 }
 
 function loadState() {
@@ -301,7 +342,11 @@ function loadState() {
             completedTests: parsed.completedTests && typeof parsed.completedTests === "object" ? parsed.completedTests : {},
             totalTestsCount: Number(parsed.totalTestsCount) || 0,
             scoresSum: Number(parsed.scoresSum) || 0,
-            xp: Number(parsed.xp) || 0
+            xp: Number(parsed.xp) || 0,
+            dailyChallenge: parsed.dailyChallenge && typeof parsed.dailyChallenge === "object" ? parsed.dailyChallenge : { date: null, completed: false },
+            dailyGoals: parsed.dailyGoals && typeof parsed.dailyGoals === "object" ? parsed.dailyGoals : { date: null, testsCompleted: 0, questionsAnswered: 0, correctAnswers: 0, goalsClaimed: [] },
+            activity: Array.isArray(parsed.activity) ? parsed.activity : [],
+            achievements: Array.isArray(parsed.achievements) ? parsed.achievements : []
         };
     } catch { return defaultState(); }
 }
@@ -376,6 +421,7 @@ function bindEvents() {
     $("#theme-toggle").addEventListener("click", toggleTheme);
 
     $("#btn-random-quiz").addEventListener("click", randomQuiz);
+    $("#btn-daily-challenge").addEventListener("click", startDailyChallenge);
 
     $("#streak-btn").addEventListener("click", () => {
         const days = getStreak().days;
@@ -419,9 +465,19 @@ function renderHomeStats() {
 
     const motBox = $("#motivation-box");
     const motText = motBox.querySelector(".motivation-text");
-    if (progressPct >= 80) motText.textContent = "Дивовижні результати! НМТ під контролем! 🏆";
+    if (progressPct >= 80) motText.textContent = "Дивовижні результати! Продовжуй вивчати мову! 🏆";
     else if (progressPct > 0) motText.textContent = "Чудовий темп! Продовжуй рух по модулях. 🚀";
     else motText.textContent = "Обирай тему та починай прокачувати знання! 💡";
+
+    renderDailyChallenge();
+    renderDailyGoals();
+    renderRecommended();
+    renderActivity();
+
+    checkAchievements();
+    renderAchievements();
+    const achCount = $("#achievements-count");
+    if (achCount) achCount.textContent = `${state.achievements.length} / ${ACHIEVEMENTS.length}`;
 }
 
 function animateRing(id, pct) {
@@ -546,6 +602,7 @@ function startQuiz(id) {
     quiz.answers = [];
     quiz.errors = [];
     quiz.elapsed = 0;
+    quiz.isDaily = false;
 
     if (quiz.timerInterval) clearInterval(quiz.timerInterval);
     quiz.timerInterval = setInterval(() => {
@@ -754,6 +811,15 @@ function finishQuiz() {
     }
 
     saveTestProgress(quiz.topicId, percent);
+    updateDailyGoalsAfterQuiz(percent, correct);
+
+    if (quiz.isDaily) {
+        completeDailyChallenge(xp);
+    } else {
+        const t = database.find(d => d.id === quiz.topicId);
+        addActivity("test", `Тест «${t ? t.title : quiz.topicId}»: ${correct}/${total} (${percent}%)`);
+    }
+
     show("screen-results");
 
     if (percent >= 75) spawnConfetti();
@@ -884,6 +950,266 @@ function spawnConfetti() {
     }
 
     setTimeout(() => { container.innerHTML = ""; }, 4000);
+}
+
+/* ============================================================
+   ACHIEVEMENTS
+   ============================================================ */
+const ACHIEVEMENTS = [
+    { id: "first_test", title: "Перший крок", desc: "Пройти перший тест", icon: "🎯", check: () => state.totalTestsCount >= 1 },
+    { id: "streak_3", title: "Три дні поспіль", desc: "Серія 3 дні", icon: "🔥", check: () => getStreak().days >= 3 },
+    { id: "streak_7", title: "Тиждень безперервно", desc: "Серія 7 днів", icon: "💪", check: () => getStreak().days >= 7 },
+    { id: "perfect_score", title: "Ідеально!", desc: "100% на тесті", icon: "⭐", check: () => Object.values(state.completedTests).some(s => s === 100) },
+    { id: "topics_3", title: "Енциклопедист", desc: "Вивчити 3 теми", icon: "📚", check: () => Object.values(state.completedTests).filter(s => s >= 50).length >= 3 },
+    { id: "topics_all", title: "Мовознавець", desc: "Вивчити всі теми", icon: "🏆", check: () => Object.values(state.completedTests).filter(s => s >= 50).length >= database.length },
+    { id: "xp_100", title: "Скарбничка", desc: "Набрати 100 XP", icon: "💎", check: () => state.xp >= 100 },
+    { id: "xp_500", title: "Майстер", desc: "Набрати 500 XP", icon: "👑", check: () => state.xp >= 500 },
+    { id: "daily_done", title: "Щоденний герой", desc: "Виконати щоденний виклик", icon: "⚡", check: () => state.dailyChallenge.completed },
+    { id: "tests_10", title: "Досвідчений", desc: "Пройти 10 тестів", icon: "🧪", check: () => state.totalTestsCount >= 10 },
+    { id: "favorites_3", title: "Колекціонер", desc: "Додати 3 теми в обране", icon: "❤️", check: () => state.favorites.length >= 3 },
+    { id: "goals_all", title: "Перфекціоніст", desc: "Виконати всі щоденні цілі", icon: "🎯", check: () => { const goals = getDailyGoals(); return goals.every(g => state.dailyGoals.goalsClaimed.includes(g.id)); } }
+];
+
+function checkAchievements() {
+    let newAchievements = [];
+    ACHIEVEMENTS.forEach(a => {
+        if (!state.achievements.includes(a.id) && a.check()) {
+            state.achievements.push(a.id);
+            newAchievements.push(a);
+        }
+    });
+    if (newAchievements.length > 0) {
+        saveState();
+        newAchievements.forEach(a => addActivity("achievement", `Досягнення: ${a.icon} ${a.title}`));
+    }
+    return newAchievements;
+}
+
+function renderAchievements() {
+    const container = $("#achievements-grid");
+    if (!container) return;
+    container.innerHTML = "";
+    ACHIEVEMENTS.forEach(a => {
+        const unlocked = state.achievements.includes(a.id);
+        const card = document.createElement("div");
+        card.className = "achievement-card" + (unlocked ? " unlocked" : "");
+        card.innerHTML = `<div class="achievement-icon">${unlocked ? a.icon : "🔒"}</div><div class="achievement-title">${a.title}</div><div class="achievement-desc">${a.desc}</div>`;
+        container.appendChild(card);
+    });
+}
+
+/* ============================================================
+   DAILY CHALLENGE
+   ============================================================ */
+function isDailyChallengeCompleted() {
+    const today = new Date().toDateString();
+    return state.dailyChallenge.date === today && state.dailyChallenge.completed;
+}
+
+function completeDailyChallenge(bonusXp) {
+    const today = new Date().toDateString();
+    state.dailyChallenge = { date: today, completed: true };
+    state.xp += bonusXp;
+    saveState();
+    addActivity("daily", `Щоденний виклик виконано! +${bonusXp} XP`);
+    renderHomeStats();
+}
+
+function startDailyChallenge() {
+    if (isDailyChallengeCompleted()) return;
+    const withQ = database.filter(t => t.questions.length > 0);
+    const allQuestions = [];
+    withQ.forEach(t => {
+        t.questions.forEach(q => allQuestions.push({ ...q, topicId: t.id }));
+    });
+    shuffleArray(allQuestions);
+    quiz.topicId = "daily";
+    quiz.questions = allQuestions.slice(0, Math.min(5, allQuestions.length));
+    quiz.currentIndex = 0;
+    quiz.answers = [];
+    quiz.errors = [];
+    quiz.elapsed = 0;
+    quiz.isDaily = true;
+
+    if (quiz.timerInterval) clearInterval(quiz.timerInterval);
+    quiz.timerInterval = setInterval(() => {
+        quiz.elapsed++;
+        const min = Math.floor(quiz.elapsed / 60);
+        const sec = quiz.elapsed % 60;
+        $("#quiz-timer").textContent = `${min}:${String(sec).padStart(2, "0")}`;
+    }, 1000);
+
+    $("#quiz-timer").textContent = "0:00";
+    showQuestion();
+    show("screen-quiz");
+}
+
+/* ============================================================
+   DAILY GOALS
+   ============================================================ */
+function resetDailyGoalsIfNeeded() {
+    const today = new Date().toDateString();
+    if (state.dailyGoals.date !== today) {
+        state.dailyGoals = { date: today, testsCompleted: 0, questionsAnswered: 0, correctAnswers: 0, goalsClaimed: [] };
+        saveState();
+    }
+}
+
+function getDailyGoals() {
+    resetDailyGoalsIfNeeded();
+    const dg = state.dailyGoals;
+    return [
+        { id: "test", text: "Пройти 1 тест", current: dg.testsCompleted, target: 1, xp: 20 },
+        { id: "questions", text: "Відповісти на 10 питань", current: dg.questionsAnswered, target: 10, xp: 30 },
+        { id: "accuracy", text: "Набрати 70%+ точність", current: dg.correctAnswers >= 3 ? 1 : 0, target: 1, xp: 25 }
+    ];
+}
+
+function updateDailyGoalsAfterQuiz(percent, totalCorrect) {
+    const today = new Date().toDateString();
+    resetDailyGoalsIfNeeded();
+    state.dailyGoals.testsCompleted++;
+    state.dailyGoals.questionsAnswered += quiz.questions.length;
+    state.dailyGoals.correctAnswers += totalCorrect;
+    saveState();
+}
+
+function claimGoalXp(goalId) {
+    if (state.dailyGoals.goalsClaimed.includes(goalId)) return;
+    const goals = getDailyGoals();
+    const goal = goals.find(g => g.id === goalId);
+    if (!goal || goal.current < goal.target) return;
+    state.dailyGoals.goalsClaimed.push(goalId);
+    state.xp += goal.xp;
+    saveState();
+    addActivity("goal", `Щоденна ціль «${goal.text}» виконана! +${goal.xp} XP`);
+    renderHomeStats();
+}
+
+/* ============================================================
+   ACTIVITY
+   ============================================================ */
+function addActivity(type, text) {
+    const now = new Date();
+    const timeStr = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+    state.activity.unshift({ type, text, time: timeStr, date: now.toDateString() });
+    if (state.activity.length > 20) state.activity = state.activity.slice(0, 20);
+    saveState();
+}
+
+function renderActivity() {
+    const list = $("#activity-list");
+    if (!list) return;
+    if (state.activity.length === 0) {
+        list.innerHTML = '<div class="activity-empty">Починай вчитися — і твоя активність з\'явиться тут!</div>';
+        return;
+    }
+    list.innerHTML = "";
+    state.activity.slice(0, 5).forEach(a => {
+        const dotClass = a.type === "test" ? "green" : a.type === "goal" ? "orange" : "";
+        const item = document.createElement("div");
+        item.className = "activity-item";
+        item.innerHTML = `<div class="activity-dot ${dotClass}"></div><span class="activity-text">${a.text}</span><span class="activity-time">${a.time}</span>`;
+        list.appendChild(item);
+    });
+}
+
+/* ============================================================
+   RECOMMENDED
+   ============================================================ */
+function renderRecommended() {
+    const container = $("#home-recommended-scroll");
+    if (!container) return;
+    container.innerHTML = "";
+
+    const withQ = database.filter(t => t.questions.length > 0);
+    const notStarted = withQ.filter(t => !state.completedTests[t.id]);
+    const weakTopics = withQ.filter(t => {
+        const s = state.completedTests[t.id];
+        return s && s < 70;
+    });
+
+    const recommended = [];
+    if (notStarted.length > 0) recommended.push({ topic: notStarted[0], tag: "Нова тема" });
+    if (weakTopics.length > 0) recommended.push({ topic: weakTopics[0], tag: "Повторити" });
+    if (recommended.length < 2) {
+        const inProgress = withQ.filter(t => {
+            const s = state.completedTests[t.id];
+            return s && s >= 50 && s < 90;
+        });
+        if (inProgress.length > 0) recommended.push({ topic: inProgress[0], tag: "Продовжити" });
+    }
+    if (recommended.length < 2) {
+        const random = withQ[Math.floor(Math.random() * withQ.length)];
+        if (!recommended.find(r => r.topic.id === random.id)) {
+            recommended.push({ topic: random, tag: "Спробувати" });
+        }
+    }
+
+    recommended.forEach(r => {
+        const card = document.createElement("div");
+        card.className = "recommended-card";
+        card.innerHTML = `<span class="recommended-tag">${r.tag}</span><h3>${r.topic.title}</h3><p>${r.topic.description}</p>`;
+        card.addEventListener("click", () => openConspect(r.topic.id));
+        container.appendChild(card);
+    });
+}
+
+/* ============================================================
+   RENDER HOME
+   ============================================================ */
+function renderDailyChallenge() {
+    const card = $("#daily-challenge-card");
+    const sub = $("#dc-sub");
+    const btn = $("#btn-daily-challenge");
+    if (!card) return;
+
+    if (isDailyChallengeCompleted()) {
+        card.classList.add("completed");
+        sub.textContent = "Виконано сьогодні!";
+        btn.textContent = "✓";
+        btn.disabled = true;
+    } else {
+        card.classList.remove("completed");
+        sub.textContent = "5 випадкових питань — +50 бонусних XP";
+        btn.textContent = "Старт";
+        btn.disabled = false;
+    }
+}
+
+function renderDailyGoals() {
+    const list = $("#dg-list");
+    const xpEl = $("#dg-xp");
+    if (!list) return;
+
+    resetDailyGoalsIfNeeded();
+    const goals = getDailyGoals();
+    const unclaimed = goals.filter(g => g.current >= g.target && !state.dailyGoals.goalsClaimed.includes(g.id));
+    const totalBonusXp = unclaimed.reduce((a, g) => a + g.xp, 0);
+
+    if (xpEl) xpEl.textContent = totalBonusXp > 0 ? `+${totalBonusXp} XP` : "+0 XP";
+
+    list.innerHTML = "";
+    goals.forEach(g => {
+        const done = g.current >= g.target;
+        const claimed = state.dailyGoals.goalsClaimed.includes(g.id);
+        const item = document.createElement("div");
+        item.className = "dg-item" + (done ? " done" : "");
+        const pct = Math.min(100, Math.round((g.current / g.target) * 100));
+        item.innerHTML = `
+            <div class="dg-check">${done && claimed ? "✓" : ""}</div>
+            <span class="dg-text">${g.text}</span>
+            <div class="dg-progress"><div class="dg-progress-fill" style="width:${pct}%"></div></div>
+        `;
+        if (done && !claimed) {
+            item.style.cursor = "pointer";
+            item.addEventListener("click", () => {
+                claimGoalXp(g.id);
+                renderDailyGoals();
+            });
+        }
+        list.appendChild(item);
+    });
 }
 
 /* ============================================================

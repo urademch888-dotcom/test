@@ -41,9 +41,9 @@
         <!-- HOME -->
         <section id="screen-home" class="screen active">
             <div class="hero">
-                <div class="hero-badge">Навчальний центр</div>
-                <h1 class="hero-title">Підготовка до НМТ<br><span class="gradient-text">як у Apple</span></h1>
-                <p class="hero-subtitle">Конспекти, тести, прогрес та серії днів — все в одному місці з красивим інтерфейсом.</p>
+                <div class="hero-badge">Платформа вивчення мови</div>
+                <h1 class="hero-title">ezyUKr<br><span class="gradient-text">Вивчай українську</span></h1>
+                <p class="hero-subtitle">Теорія, практика, тести та відстеження прогресу — все в одному місці з красивим інтерфейсом.</p>
                 <div class="hero-actions">
                     <button id="btn-start" class="btn-primary btn-lg">Розпочати</button>
                     <button id="btn-favorites-home" class="btn-secondary btn-lg">Обране</button>
@@ -92,6 +92,27 @@
                 </div>
             </div>
 
+            <!-- Daily Challenge -->
+            <div class="daily-challenge-card" id="daily-challenge-card">
+                <div class="dc-left">
+                    <div class="dc-icon">⚡</div>
+                    <div class="dc-info">
+                        <span class="dc-label">Щоденний виклик</span>
+                        <span class="dc-sub" id="dc-sub">Відповідь на 5 випадкових питань</span>
+                    </div>
+                </div>
+                <button class="btn-primary dc-btn" id="btn-daily-challenge">Старт</button>
+            </div>
+
+            <!-- Daily Goals -->
+            <div class="daily-goals-card" id="daily-goals-card">
+                <div class="dg-header">
+                    <h3>Щоденні цілі</h3>
+                    <span class="dg-xp" id="dg-xp">+0 XP</span>
+                </div>
+                <div class="dg-list" id="dg-list"></div>
+            </div>
+
             <div class="quick-actions">
                 <button class="quick-card" id="btn-start-quick">
                     <div class="quick-icon qi-1"></div>
@@ -109,10 +130,34 @@
 
             <div class="section-block">
                 <div class="section-header">
+                    <h2>Рекомендовані</h2>
+                </div>
+                <div class="topics-scroll" id="home-recommended-scroll"></div>
+            </div>
+
+            <div class="section-block">
+                <div class="section-header">
                     <h2>Модулі</h2>
                     <button class="btn-text" id="btn-all-topics">Усі теми</button>
                 </div>
                 <div class="topics-scroll" id="home-topics-scroll"></div>
+            </div>
+
+            <!-- Activity -->
+            <div class="activity-card" id="activity-card">
+                <div class="activity-header">
+                    <h3>Остання активність</h3>
+                </div>
+                <div class="activity-list" id="activity-list"></div>
+            </div>
+
+            <!-- Achievements -->
+            <div class="section-block achievements-section">
+                <div class="section-header">
+                    <h2>Досягнення</h2>
+                    <span class="btn-text" id="achievements-count"></span>
+                </div>
+                <div class="achievements-grid" id="achievements-grid"></div>
             </div>
 
             <div class="motivation-card" id="motivation-box">

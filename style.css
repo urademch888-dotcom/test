@@ -1342,6 +1342,353 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ============================================================
+   Daily Challenge
+   ============================================================ */
+.daily-challenge-card {
+    background: linear-gradient(135deg, var(--accent), #5ac8fa);
+    border-radius: var(--r-lg);
+    padding: var(--space-lg) var(--space-xl);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-lg);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 113, 227, 0.3);
+    transition: transform var(--dur-normal) var(--ease-spring);
+}
+
+.daily-challenge-card:hover {
+    transform: translateY(-2px);
+}
+
+.daily-challenge-card.completed {
+    background: linear-gradient(135deg, var(--success), #30d158);
+    box-shadow: 0 4px 20px rgba(48, 209, 88, 0.3);
+}
+
+.dc-left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.dc-icon {
+    font-size: 1.8rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.2);
+    border-radius: var(--r-md);
+    flex-shrink: 0;
+}
+
+.dc-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.dc-label {
+    font-weight: 700;
+    font-size: var(--fs-body);
+}
+
+.dc-sub {
+    font-size: var(--fs-xs);
+    opacity: 0.85;
+}
+
+.dc-btn {
+    background: rgba(255,255,255,0.25);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 10px 24px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.dc-btn:hover {
+    background: rgba(255,255,255,0.35);
+}
+
+.daily-challenge-card.completed .dc-btn {
+    background: rgba(255,255,255,0.25);
+}
+
+/* ============================================================
+   Daily Goals
+   ============================================================ */
+.daily-goals-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: var(--space-lg) var(--space-xl);
+    margin-bottom: var(--space-lg);
+}
+
+.dg-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+}
+
+.dg-header h3 {
+    font-size: var(--fs-h3);
+    font-weight: 700;
+}
+
+.dg-xp {
+    font-size: var(--fs-small);
+    font-weight: 700;
+    color: var(--warning);
+    background: var(--warning-light);
+    padding: 4px 12px;
+    border-radius: var(--r-full);
+}
+
+.dg-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.dg-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm) 0;
+}
+
+.dg-check {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--border-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all var(--dur-fast) var(--ease-spring);
+    font-size: 12px;
+    color: transparent;
+}
+
+.dg-item.done .dg-check {
+    background: var(--success);
+    border-color: var(--success);
+    color: #fff;
+}
+
+.dg-text {
+    font-size: var(--fs-small);
+    color: var(--text-secondary);
+    flex: 1;
+}
+
+.dg-item.done .dg-text {
+    color: var(--text-tertiary);
+    text-decoration: line-through;
+}
+
+.dg-progress {
+    width: 60px;
+    height: 4px;
+    background: var(--ring-track);
+    border-radius: var(--r-full);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.dg-progress-fill {
+    height: 100%;
+    background: var(--accent-gradient);
+    border-radius: var(--r-full);
+    transition: width 0.4s var(--ease-out);
+}
+
+/* ============================================================
+   Recommended
+   ============================================================ */
+.recommended-card {
+    flex: 0 0 240px;
+    scroll-snap-align: start;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    cursor: pointer;
+    transition: transform var(--dur-normal) var(--ease-spring), box-shadow var(--dur-normal);
+}
+
+.recommended-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.recommended-tag {
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 3px 10px;
+    border-radius: var(--r-full);
+    align-self: flex-start;
+}
+
+.recommended-card h3 {
+    font-size: var(--fs-body);
+    font-weight: 700;
+}
+
+.recommended-card p {
+    font-size: var(--fs-xs);
+    color: var(--text-tertiary);
+    line-height: var(--lh-normal);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ============================================================
+   Achievements
+   ============================================================ */
+.achievements-section {
+    margin-bottom: var(--space-xl);
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: var(--space-md);
+}
+
+.achievement-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: var(--space-lg);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+    opacity: 0.5;
+    transition: all var(--dur-normal) var(--ease-spring);
+}
+
+.achievement-card.unlocked {
+    opacity: 1;
+    border-color: var(--warning);
+    box-shadow: 0 2px 12px rgba(255, 159, 10, 0.15);
+}
+
+.achievement-card.unlocked:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.achievement-icon {
+    font-size: 2rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-tertiary);
+    border-radius: var(--r-md);
+}
+
+.achievement-card.unlocked .achievement-icon {
+    background: var(--warning-light);
+}
+
+.achievement-title {
+    font-weight: 700;
+    font-size: var(--fs-small);
+    color: var(--text-primary);
+}
+
+.achievement-desc {
+    font-size: var(--fs-xs);
+    color: var(--text-tertiary);
+}
+
+/* ============================================================
+   Activity
+   ============================================================ */
+.activity-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: var(--space-lg) var(--space-xl);
+    margin-bottom: var(--space-lg);
+}
+
+.activity-header {
+    margin-bottom: var(--space-md);
+}
+
+.activity-header h3 {
+    font-size: var(--fs-h3);
+    font-weight: 700;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+}
+
+.activity-dot.green { background: var(--success); }
+.activity-dot.orange { background: var(--warning); }
+
+.activity-text {
+    font-size: var(--fs-small);
+    color: var(--text-secondary);
+    flex: 1;
+}
+
+.activity-time {
+    font-size: var(--fs-xs);
+    color: var(--text-tertiary);
+    flex-shrink: 0;
+}
+
+.activity-empty {
+    text-align: center;
+    padding: var(--space-lg);
+    color: var(--text-tertiary);
+    font-size: var(--fs-small);
+}
+
+/* ============================================================
    Confetti
    ============================================================ */
 .confetti-container {
